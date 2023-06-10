@@ -1,17 +1,19 @@
 <?php
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AppController
+class AppController extends AbstractController
 {
-    #[Route('/')]
+    #[Route('/', name: 'home')]
     public function index(Request $request): Response
     {
-        return view
+        return $this->render('app/home.html.twig');
     }
+
     #[Route('/sobre')]
     public function about(): Response
     {
