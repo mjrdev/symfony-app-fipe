@@ -8,6 +8,7 @@ class AppService
     public function getBrands()
     {
         $brands = $this->httpClient->request('GET', 'https://parallelum.com.br/fipe/api/v1/carros/marcas');
-        return $brands->toArray();
+        $brands = $brands->toArray();
+        return $brands;
     }
 }
